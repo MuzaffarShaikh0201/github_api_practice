@@ -5,5 +5,7 @@ from data import data
 class GithubApi(Resource):
     def post(self):
         if request.headers["Content-Type"] == "application/json":
-            data.append(json.dumps(request.json))
-            print(request.json)
+            commits = request.json['commits'][0]
+            data.append(list(map(dict, commits)))
+            print(commits)
+            print(data)
