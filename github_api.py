@@ -7,7 +7,7 @@ class GithubApi(Resource):
     def post(self):
         if request.headers["Content-Type"] == "application/json":
             commits = request.json['commits']
-            # print(commits)
-            print(type(commits))
+            print(commits)
+            # print(type(commits))
             data.append(commits[0])
             print(data)
