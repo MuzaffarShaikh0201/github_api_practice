@@ -8,5 +8,5 @@ class GithubApi(Resource):
         if request.headers["Content-Type"] == "application/json":
             commits = request.json['commits']
             print(commits)
-            data.append(list(map(dict, commits[0])))
+            data.append(json.loads(commits))
             print(data)
